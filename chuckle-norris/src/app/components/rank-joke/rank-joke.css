@@ -1,0 +1,17 @@
+#rankJoke {
+    padding-top: 150px;
+}
+
+select {
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
