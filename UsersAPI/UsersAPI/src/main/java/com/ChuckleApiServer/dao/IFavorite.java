@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface IFavorite {
 
      List<Favorite> getAllFavorites();
-     Optional<Favorite> getFavoriteByRank(Integer id);
+     List<Favorite> getFavoriteByRank(int rank);
      Favorite addFavorite(Favorite aFavorite);
      Favorite updateFavorite(Favorite aFavorite);
      void deleteFavorite(Integer id);

@@ -22,10 +22,11 @@ public class FavoriteServiceImplementation implements IFavorite {
         return theFavoriteRepository.findAll();
     }
 
-    public Optional<Favorite> getFavoriteByRank(Integer id){
-        return theFavoriteRepository.findById(id);
+    @Override
+    @Transactional
+    public List<Favorite> getFavoriteByRank(int rank) {
+        return theFavoriteRepository.getFavoritesByRank(rank);
     }
-
     @Override
     @Transactional
     public Favorite addFavorite(Favorite aFavorite){

@@ -20,9 +20,9 @@ public class FavoriteAPIController {
         return theFavoriteService.getAllFavorites();
     }
 
-    @GetMapping("/Favorites/{id}")
-    public Optional<Favorite> getFavoriteByRank(@PathVariable int id) {
-        return theFavoriteService.getFavoriteByRank(id);
+    @GetMapping("/Favorites/Search")
+    public List<Favorite> getFavoriteByRank(@RequestParam int rank) {
+        return theFavoriteService.getFavoriteByRank(rank);
     }
 
     @PostMapping("/Favorites")
