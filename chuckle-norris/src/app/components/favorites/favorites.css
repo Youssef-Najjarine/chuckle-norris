@@ -1,0 +1,87 @@
+:root {
+  --primary_color: #000000;
+  --secondary_color: #ffffff;
+  --pointer: pointer;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bloc_favorite {
+  padding-left: 2rem;
+  padding-top: 150px;
+  max-width: 74%;
+}
+.headerAndSort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.sort-buttons button {
+    padding: 10px;
+}
+
+.bloc_card {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.fav-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #E0E0E0;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-size: 1.5vw;
+  -webkit-box-shadow: 0px 3px 12px 5px rgba(0,0,0,0.7); 
+  box-shadow: 0px 3px 12px 5px rgba(0,0,0,0.7);
+}
+
+.info {
+    width: 88%;
+    max-width: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.quote {
+    max-height: 150px;
+    overflow: auto;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+.fav-card button {
+  border: none;
+  background: none;
+  cursor: var(--pointer);
+}
+
+svg {
+  width: 40px;
+  fill: #B71C1C;
+}
+
+@media(max-width: 768px) {
+  .bloc_card {
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+}
