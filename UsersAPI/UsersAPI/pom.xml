@@ -20,7 +20,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ApiServerStarter</groupId>
-	<artifactId>ApiServerStarter</artifactId>
+	<artifactId>ChuckleAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ApiServerStarter</name>
 	<description>VegasApiServer</description>
