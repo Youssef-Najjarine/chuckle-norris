@@ -1,28 +1,26 @@
-package Model;
+package com.Server.model;
 
 import java.util.Objects;
 
-public class chuckApiModel {
+public class ChuckModel {
 
-private String iconurl;
+    private String iconurl;
 
-private String id;
+    private String id;
 
-private String url;
+    private String url;
 
-private String value;
+    private String value;
 
 
+    public ChuckModel(){};
 
-    public chuckApiModel(){};
-
-    public chuckApiModel(String iconurl, String value, String url, String id) {
+    public ChuckModel(String iconurl, String id, String url, String value) {
         this.iconurl = iconurl;
-        this.value = value;
-        this.url = url;
         this.id = id;
+        this.url = url;
+        this.value = value;
     }
-
 
     public String getIconurl() {
         return iconurl;
@@ -60,7 +58,7 @@ private String value;
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        chuckApiModel that = (chuckApiModel) o;
+        ChuckModel that = (ChuckModel) o;
         return Objects.equals(iconurl, that.iconurl) && Objects.equals(id, that.id) && Objects.equals(url, that.url) && Objects.equals(value, that.value);
     }
 
@@ -72,7 +70,7 @@ private String value;
 
     @Override
     public String toString() {
-        return "chuckApiModel{" +
+        return "ChuckModel{" +
                 "iconurl='" + iconurl + '\'' +
                 ", id='" + id + '\'' +
                 ", url='" + url + '\'' +

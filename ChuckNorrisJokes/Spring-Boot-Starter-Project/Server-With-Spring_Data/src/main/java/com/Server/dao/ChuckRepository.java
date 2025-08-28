@@ -1,10 +1,9 @@
-package DAO;
+package com.Server.dao;
 
-import Model.chuckApiModel;
-
+import com.Server.model.ChuckModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ChuckRepository extends JpaRepository<chuckApiModel, String> {
+public interface ChuckRepository extends JpaRepository<ChuckModel, String> {
 
 
 
