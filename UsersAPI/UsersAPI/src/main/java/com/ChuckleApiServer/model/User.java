@@ -1,4 +1,4 @@
-package com.UsersApiServer.model;
+package com.ChuckleApiServer.model;
 
 
 import jakarta.persistence.*;

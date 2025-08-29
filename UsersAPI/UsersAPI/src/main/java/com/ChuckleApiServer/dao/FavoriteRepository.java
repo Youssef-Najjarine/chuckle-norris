@@ -1,0 +1,15 @@
+package com.ChuckleApiServer.dao;
+
+import com.ChuckleApiServer.model.Favorite;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+
+public interface FavoriteRepository extends JpaRepository<Favorite, Integer> {
+
+    @Query(value= "SELECT * FROM favorites WHERE rank=rank", nativeQuery = true)
+    List<Favorite> getFavoritesByRank(@Param("rank") int rank);
+
+}

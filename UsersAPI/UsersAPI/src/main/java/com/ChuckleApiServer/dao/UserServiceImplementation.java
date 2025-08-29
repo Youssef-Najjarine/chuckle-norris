@@ -1,6 +1,6 @@
-package com.UsersApiServer.dao;
+package com.ChuckleApiServer.dao;
 
-import com.UsersApiServer.model.User;
+import com.ChuckleApiServer.model.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

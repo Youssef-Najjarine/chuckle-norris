@@ -1,4 +1,4 @@
-package com.UsersApiServer;
+package com.Server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // This is the Server main application
 // This is what started and represents the server in the backend
 @SpringBootApplication
-public class UserApi {
+public class ApiServer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserApi.class, args);
+		SpringApplication.run(ApiServer.class, args);
 	}
 
 }
