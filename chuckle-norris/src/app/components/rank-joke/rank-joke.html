@@ -1,17 +1,25 @@
-  <section class="container" id="rankJoke">
+  <section id="rankJoke">
     <div class="text-center mb-4">
         <h2>Rank the Jokes</h2>
     </div>
-    <div class="row justify-content-center">
-      <div class="col">
-        <div class="card  shadow-sm text-center h-100">
+    <div class="joke-row">
+      <div class="joke-col">
+        <div class="card shadow-sm text-center h-100">
           <div class="card-header">
             <h4 class="fw-normal">Joke 1</h4>
           </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">Chuck Norris can slam a revolving door.</h1>
-            <div class="d-flex align-items-center">
-                <div class="w-100">
+          <div class="joke-card-body">
+            <h1 class="joke-header">{{joke1}}</h1>
+            <div class="heart-rank-row">
+              <div>
+                <input type="checkbox" id="heart-toggle-1">
+                <label for="heart-toggle-1">
+                  <svg class="heart" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"/>
+                  </svg>
+                </label>
+              </div>
+                <div class="rank-div">
                     <select class="form-select" id="select-centered">
                     <option selected>Choose Rank</option>
                     <option value="1">One</option>
@@ -23,42 +31,58 @@
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card  shadow-sm text-center h-100">
+      <div class="joke-col">
+        <div class="card shadow-sm text-center h-100">
           <div class="card-header">
             <h4 class="fw-normal">Joke 2</h4>
           </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">Chuck Norris can hear sign language.</h1>
-            <div class="d-flex align-items-center">
-            <div class="w-100">
-                <select class="form-select" id="select-centered">
-                <option selected>Choose Rank</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                </select>
-            </div>
+          <div class="joke-card-body">
+            <h1 class="joke-header">{{joke2}}</h1>
+            <div class="heart-rank-row">
+              <div>
+                <input type="checkbox" id="heart-toggle-2">
+                <label for="heart-toggle-2">
+                  <svg class="heart" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"/>
+                  </svg>
+                </label>
+              </div>
+                <div class="rank-div">
+                    <select class="form-select" id="select-centered">
+                    <option selected>Choose Rank</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    </select>
+                </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card  shadow-sm text-center h-100">
+      <div class="joke-col">
+        <div class="card shadow-sm text-center h-100">
           <div class="card-header">
             <h4 class="fw-normal">Joke 3</h4>
           </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">Chuck Norris can speak Braille.</h1>
-            <div class="d-flex align-items-center">
-            <div class="w-100">
-                <select class="form-select" id="select-centered">
-                <option selected>Choose Rank</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-                </select>
-            </div>
+          <div class="joke-card-body">
+            <h1 class="joke-header">{{joke3}}</h1>
+            <div class="heart-rank-row">
+              <div>
+                <input type="checkbox" id="heart-toggle-3">
+                <label for="heart-toggle-3">
+                  <svg class="heart" viewBox="0 0 24 24">
+                    <path d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"/>
+                  </svg>
+                </label>
+              </div>
+                <div class="rank-div">
+                    <select class="form-select" id="select-centered">
+                    <option selected>Choose Rank</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    </select>
+                </div>
             </div>
           </div>
         </div>

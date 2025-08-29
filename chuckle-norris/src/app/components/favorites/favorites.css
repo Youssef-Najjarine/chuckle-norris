@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'PatrickHand';
+  src: url('/fonts/PatrickHand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --primary_color: #000000;
   --secondary_color: #ffffff;
@@ -5,6 +12,7 @@
 }
 
 * {
+  font-family: 'PatrickHand';
   padding: 0;
   margin: 0;
   list-style-type: none;

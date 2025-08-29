@@ -1,6 +1,15 @@
+@font-face {
+  font-family: 'PatrickHand';
+  src: url('/fonts/PatrickHand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 
-* { box-sizing: border-box; }
+* { 
+    font-family: 'PatrickHand';
+    box-sizing: border-box; 
+}
 body { background: #F6F5F7; display: flex; justify-content: center; align-items: center; flex-direction: column; font-family: 'Poppins'; height: 100vh; margin: -20px 0 50px; }
 h1 { font-weight: 600; margin: 0; }
 h2 { text-align: center; }
@@ -14,7 +23,7 @@ button {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     border: 1px solid #27CDA7;
-    background-color: #27CDA7;
+    background-color: blue;
     color: #FFFFFF;
     font-size: .75rem;
     font-weight: 500;
@@ -122,7 +131,7 @@ input { background-color: #EEEEEE; border: none; padding: 12px 15px; margin: 8px
     -o-transform: translateX(-100%);
 }
 .overlay { 
-    background: linear-gradient(to right, #37DFB8, #E87B37, #E8375A);
+    background: linear-gradient(to right, black, lightgrey, blue);
     background-size: cover;
     background-position: 0 0;
     color: #FFFFFF;

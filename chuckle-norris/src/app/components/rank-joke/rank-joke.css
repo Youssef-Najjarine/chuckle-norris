@@ -1,7 +1,53 @@
+@font-face {
+  font-family: 'PatrickHand';
+  src: url('/fonts/PatrickHand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    font-family: 'PatrickHand';
+}
+h1 {
+
+}
 #rankJoke {
     padding-top: 150px;
 }
 
+.joke-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.joke-col {
+    width: 500px;
+    height: 400px;
+}
+
+.joke-card-body {
+    height: 87%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.joke-header {
+    font-size: 2rem;
+    height: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
+.heart-rank-row {
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 select {
     text-align-last: center;
     text-align: center;
@@ -14,4 +60,21 @@ select {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.heart {
+  width: 30px;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + label svg {
+  fill: red;
 }
