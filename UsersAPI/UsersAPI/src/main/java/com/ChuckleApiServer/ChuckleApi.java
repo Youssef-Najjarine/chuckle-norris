@@ -11,9 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // This is what started and represents the server in the backend
 @SpringBootApplication
 public class  ChuckleApi {
-
 	public static void main(String[] args) {
 		SpringApplication.run(ChuckleApi.class, args);
 	}
-
 }

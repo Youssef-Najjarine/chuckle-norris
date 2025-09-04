@@ -1,4 +1,4 @@
-package com.ChuckleApiServer.dao;
+package com.ChuckleApiServer.dao.repositories;
 
 import com.ChuckleApiServer.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

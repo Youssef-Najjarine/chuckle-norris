@@ -1,8 +1,6 @@
-package com.ChuckleApiServer.dao;
-
+package com.ChuckleApiServer.dao.interfaces;
 
 import com.ChuckleApiServer.model.User;
-
 import java.util.Optional;
 
 public interface IUser {

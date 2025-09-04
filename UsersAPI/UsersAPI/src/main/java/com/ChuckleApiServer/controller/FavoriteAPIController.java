@@ -1,11 +1,10 @@
 package com.ChuckleApiServer.controller;
 
-import com.ChuckleApiServer.dao.FavoriteServiceImplementation;
+import com.ChuckleApiServer.dao.services.FavoriteServiceImplementation;
 import com.ChuckleApiServer.model.Favorite;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping

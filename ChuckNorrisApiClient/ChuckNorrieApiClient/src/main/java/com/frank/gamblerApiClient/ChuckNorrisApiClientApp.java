@@ -9,10 +9,10 @@ public class ChuckNorrisApiClientApp {
     public static void main(String[] args) {
 ChuckIOService thechuckService = new ChuckIOService();
 
+    System.out.println(thechuckService.getTheChuckJokes());
 
-for(ChuckNorris aChuckJoke : thechuckService.getTheChuckJokes()){
-    aChuckJoke.displayChuckJokes();
-}
+
+
 
 
 

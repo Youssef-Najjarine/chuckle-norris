@@ -52,7 +52,7 @@ public class ChuckNorris {
 
     public void displayChuckJokes(){
         System.out.println("value:\t\t\t" + value);
-        System.out.println("-".repeat(50));
+
     }
 
 

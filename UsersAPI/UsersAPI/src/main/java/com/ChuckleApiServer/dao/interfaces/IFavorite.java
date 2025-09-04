@@ -1,9 +1,8 @@
-package com.ChuckleApiServer.dao;
+package com.ChuckleApiServer.dao.interfaces;
 
 import com.ChuckleApiServer.model.Favorite;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface IFavorite {
 

@@ -1,5 +1,7 @@
-package com.ChuckleApiServer.dao;
+package com.ChuckleApiServer.dao.services;
 
+import com.ChuckleApiServer.dao.interfaces.IUser;
+import com.ChuckleApiServer.dao.repositories.UserRepository;
 import com.ChuckleApiServer.model.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

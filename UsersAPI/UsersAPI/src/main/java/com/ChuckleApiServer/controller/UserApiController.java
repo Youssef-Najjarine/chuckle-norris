@@ -1,7 +1,7 @@
 package com.ChuckleApiServer.controller;
 
 
-import com.ChuckleApiServer.dao.UserServiceImplementation;
+import com.ChuckleApiServer.dao.services.UserServiceImplementation;
 import com.ChuckleApiServer.model.User;
 import org.springframework.web.bind.annotation.*;
 

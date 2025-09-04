@@ -1,12 +1,13 @@
-package com.ChuckleApiServer.dao;
+package com.ChuckleApiServer.dao.services;
 
+import com.ChuckleApiServer.dao.repositories.FavoriteRepository;
+import com.ChuckleApiServer.dao.interfaces.IFavorite;
 import com.ChuckleApiServer.model.Favorite;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FavoriteServiceImplementation implements IFavorite {
