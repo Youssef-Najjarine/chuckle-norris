@@ -35,10 +35,10 @@ public ChuckNorris[] getTheChuckJokes(){
     try {
         //                         getForObject(URL-for-the-API-Call , What you the JSON converted to
         theChuckJokes = restTemplate.getForObject(BASE_URL + "/jokes/random",  ChuckNorris[].class);
-    } catch (RestClientResponseException expceptionObj) {
+    } catch (RestClientResponseException exceptionObj) {
         // handles exceptions thrown by rest template and contains status codes
         // Display the status code and any message related too teh error
-        System.out.println(expceptionObj.getRawStatusCode() + " : " + expceptionObj.getStatusText());
+        System.out.println(exceptionObj.getRawStatusCode() + " : " + exceptionObj.getStatusText());
     } catch (ResourceAccessException exceptionObj) {
         // i/o error, ex: the server isn't running
         // Since the request was never processed there is no status code to display
