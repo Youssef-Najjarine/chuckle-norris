@@ -15,7 +15,13 @@ export class JokeApiService {
   theJokes : any[] = [];
   constructor(private theServer:HttpClient) {}
 
-  async getAllJokes() : Promise<any[]> {
+  async getJoke() : Promise<any> {
+
+    const result : any = await lastValueFrom(this.theServer.get<any>(this.theServerURL))
+    return result;
+  }
+
+  async getAllRankJokes() : Promise<any[]> {
 
     const result : any[] = await lastValueFrom(this.theServer.get<any[]>(this.theServerURL))
     return result;

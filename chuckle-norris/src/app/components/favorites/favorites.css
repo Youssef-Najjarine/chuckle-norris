@@ -5,6 +5,9 @@
   font-style: normal;
 }
 
+.trash-div {
+  cursor: pointer;
+}
 :root {
   --primary_color: #000000;
   --secondary_color: #ffffff;
