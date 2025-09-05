@@ -1,12 +1,13 @@
+<router-outlet></router-outlet>
 <section id="home">
   <div class="joke-container">
         <div class="group">      
-            <div class="wrapper">
-                {{randomJoke}}
+            <div class="wrapper" >
+                {{randomJoke.value}}
             </div>
         </div>
         <div class="new-joke">
-          <button class="btn">New Joke</button>
+          <button class="btn" (click)="getNewJoke()">New Joke</button>
         </div>
   </div>
   <h1>These Are The Only Chuck Norris Jokes Chuck Norris Has Allowed To Exist</h1>

@@ -1,6 +1,6 @@
 
 
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable}          from '@angular/core';
 import { HttpClient }         from '@angular/common/http';
 import { HttpHeaders }        from '@angular/common/http';
 import { lastValueFrom }      from 'rxjs';
@@ -10,16 +10,22 @@ import { lastValueFrom }      from 'rxjs';
 })
 export class JokeApiService {
   
-  private theServerURL : string = "http://localhost:8081";
+  private theServerURL : string = "http://localhost:8081/Joke";
 
-  theJokes : any[] = [];
+  randomJoke: any;
   constructor(private theServer:HttpClient) {}
 
   async getJoke() : Promise<any> {
 
     const result : any = await lastValueFrom(this.theServer.get<any>(this.theServerURL))
+    this.randomJoke = result;
     return result;
   }
+
+  public getRandomJoke(){
+    return this.randomJoke;
+  }
+
 
   async getAllRankJokes() : Promise<any[]> {
 

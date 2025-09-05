@@ -13,7 +13,7 @@ import { FavoriteApiService } from './services/favorite-api-service';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App  implements OnInit{
+export class App  {
   protected title = 'Chuckle Norris';
   // Name the service objectand have it dependency injected into component processing
   constructor(private jokeApiService : JokeApiService) {}
@@ -21,7 +21,7 @@ export class App  implements OnInit{
   // define a data structure to hold the for the component
   // (data comes from APU calls)
   // theGamblers : any[] = [];
-  theJoke : any = {};
+  // theJoke : any = {};
   // If you wil be adding to teh API data source
   // define an object to hold the data to be added
 
@@ -35,11 +35,12 @@ export class App  implements OnInit{
 // ngOnInit() is run when Angular start processing the page
 // Typically this is where you call the API to get the initial 
 //           copy of the data from the data source
-  async ngOnInit() 
-  {
-    this.theJoke = await this.jokeApiService.getJoke();
-    console.log("THE RANDOM JOKE: ", this.theJoke);
-  }
+  // async ngOnInit() 
+  // {
+  //   this.theJoke = await this.jokeApiService.getJoke();
+    
+  //   // console.log("THE RANDOM JOKE: ", this.theJoke);
+  // }
   
   // async addGambler(newGambler : GamblerDataLayout) {
   //   // Call the API to add the new object to the data source
