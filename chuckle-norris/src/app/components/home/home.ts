@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import { JokeApiService } from '../../services/joke-api-service';
 import { RouterOutlet } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './home.css'
 })
 export class Home implements OnInit {
-    randomJoke: any = {}
+  randomJoke: any = {}
   constructor(private jokeApiService: JokeApiService) {}
     //this.randomJoke =  this.jokeApiService.getRandomJoke();
    
