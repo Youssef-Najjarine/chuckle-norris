@@ -9,7 +9,7 @@
             <h4 class="fw-normal">Joke 1</h4>
           </div>
           <div class="joke-card-body">
-            <h1 class="joke-header">{{joke1}}</h1>
+            <h1 class="joke-header">{{joke1.value}}</h1>
             <div class="heart-rank-row">
               <div>
                 <input type="checkbox" id="heart-toggle-1">
@@ -37,7 +37,7 @@
             <h4 class="fw-normal">Joke 2</h4>
           </div>
           <div class="joke-card-body">
-            <h1 class="joke-header">{{joke2}}</h1>
+            <h1 class="joke-header">{{joke2.value}}</h1>
             <div class="heart-rank-row">
               <div>
                 <input type="checkbox" id="heart-toggle-2">
@@ -65,7 +65,7 @@
             <h4 class="fw-normal">Joke 3</h4>
           </div>
           <div class="joke-card-body">
-            <h1 class="joke-header">{{joke3}}</h1>
+            <h1 class="joke-header">{{joke3.value}}</h1>
             <div class="heart-rank-row">
               <div>
                 <input type="checkbox" id="heart-toggle-3">
@@ -85,6 +85,11 @@
                 </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="joke-col new-joke">
+        <div>
+          <button class="btn" (click)="getNewJokes()">Generate New Jokes</button>
         </div>
       </div>
     </div>
