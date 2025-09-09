@@ -18,23 +18,26 @@ export class RankJoke implements OnInit {
 
     async ngOnInit()
     {
-      this.joke1 = await this.getNewJoke1();
-      this.joke2 = await this.getNewJoke2();
-      this.joke3 = await this.getNewJoke3();
+    //   this.joke1 = await this.getNewJoke1();
+    //   this.joke2 = await this.getNewJoke2();
+    //   this.joke3 = await this.getNewJoke3();
     }
     async getNewJokes() {
-      this.joke1 = await this.getNewJoke1();
-      this.joke2 = await this.getNewJoke2();
-      this.joke3 = await this.getNewJoke3();
-      console.log("THE RANDOM JOKE: ", this.joke1, this.joke2, this.joke3);
+       this.getNewJoke1();
+       this.getNewJoke2();
+       this.getNewJoke3();
+    //   console.log("THE RANDOM JOKE: ", this.joke1, this.joke2, this.joke3);
     }
     async getNewJoke1() {
-      this.joke1 = await this.jokeApiService.getJoke();
+      this.joke1 =  await this.jokeApiService.getJoke();
+      this.joke1 = this.joke1
     }
     async getNewJoke2() {
         this.joke2 = await this.jokeApiService.getJoke();
+        this.joke2 = this.joke2
     }
     async getNewJoke3() {
       this.joke3 = await this.jokeApiService.getJoke();
+      this.joke3 = this.joke3
     }    
-}
+ }
