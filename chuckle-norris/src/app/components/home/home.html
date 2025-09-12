@@ -1,14 +1,23 @@
 <router-outlet></router-outlet>
 <section id="home">
   <div class="joke-container">
-        <div class="group">      
-            <div class="wrapper">
-                {{randomJoke.value}}
-            </div>
+    <ng-container *ngIf="randomJoke$ | async as randomJoke; else loading">
+      <div class="group">
+        <div class="wrapper">
+          {{ randomJoke.value }}
         </div>
-        <div class="new-joke">
-          <button class="btn" (click)="getNewJoke()">New Joke</button>
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      <div class="group">
+        <div class="wrapper">
+          Loading…
         </div>
+      </div>
+    </ng-template>
+    <div class="new-joke">
+      <button class="btn" (click)="getNewJoke()">New Joke</button>
+    </div>
   </div>
   <h1>These Are The Only Chuck Norris Jokes Chuck Norris Has Allowed To Exist</h1>
 </section>

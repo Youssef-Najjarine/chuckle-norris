@@ -7,7 +7,7 @@ import { lastValueFrom }      from 'rxjs';
   providedIn: 'root'
 })
 export class UserApiService {
-  private theServerURL : string = "http://localhost:8081";
+   private theServerURL : string = "http://localhost:8081/User/Create";
 
   theJokes : any[] = [];
   constructor(private theServer:HttpClient) {}

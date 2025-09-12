@@ -1,22 +1,22 @@
     <div class="container" id="container" [ngClass]="{ 'right-panel-active': isRightPanelActive }">
         <div class="form-container signup-container">
-            <form action="#">
+            <form (ngSubmit)="createAccount()">
                 <h1>Create Account</h1>
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button>Sign up</button>
+                <input type="text" placeholder="First Name" [(ngModel)]="newUser.firstName" name="firstName">
+                <input type="text" placeholder="Last Name" [(ngModel)]="newUser.lastName" name="lastName">
+                <input type="email" placeholder="Email" [(ngModel)]="newUser.email" name="email">
+                <input type="password" placeholder="Password" [(ngModel)]="newUser.password" name="password">
+                <input type="submit" value="Sign Up" class="submit"/> 
             </form>
         </div>
 
         <div class="form-container login-container">
-            <form action="#">
+            <form (ngSubmit)="login()">
                 <h1>Login</h1>
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="text" placeholder="Email" [(ngModel)]="userLogin.email" name="email">
+                <input type="password" placeholder="Password" [(ngModel)]="userLogin.password" name="password">
                 <a href="#">Forgot your password?</a>
-                <button>Login</button>
+                <input type="submit" value="Login" class="submit"/> 
             </form>
         </div>
 

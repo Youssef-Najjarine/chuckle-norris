@@ -1,35 +1,29 @@
-import {Component, OnInit } from '@angular/core';
-import { JokeApiService } from '../../services/joke-api-service';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { JokeApiService } from '../../services/joke-api-service';
+import { CommonModule } from '@angular/common';
+import { from, Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
-
+type Joke = { value: string };
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet],
   standalone: true,
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home implements OnInit {
-  randomJoke: any = {}
+export class Home {
+  randomJoke$!: Observable<Joke>;
+
   constructor(private jokeApiService: JokeApiService) {}
-    //this.randomJoke =  this.jokeApiService.getRandomJoke();
-   
-  async ngOnInit()
-  {
-    this.randomJoke = await this.jokeApiService.getJoke();
-    this.randomJoke = this.randomJoke;
-    console.log("THE RANDOM JOKE: ", this.randomJoke);
+
+  ngOnInit() {
+    this.getNewJoke();
   }
 
-  async getNewJoke() {
-    this.randomJoke =  await this.jokeApiService.getJoke();
-    //this.randomJoke = this.jokeApiService.getRandomJoke();
-    this.randomJoke = this.randomJoke;
-    
+  getNewJoke() {
+    this.randomJoke$ = from(this.jokeApiService.getJoke());
   }
-
-  
-
 }

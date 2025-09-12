@@ -1,43 +1,62 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { JokeApiService } from '../../services/joke-api-service';
-import { concat } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Observable, forkJoin, from } from 'rxjs';
+import { concatMap, toArray, finalize, map } from 'rxjs/operators';
 import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
+
 @Component({
   selector: 'app-rank-joke',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './rank-joke.html',
   styleUrl: './rank-joke.css'
 })
 export class RankJoke implements OnInit {
-    joke1 : any = {};
-    joke2: any = {};
-    joke3: any = {};
-    constructor(private jokeApiService: JokeApiService) {
-    }
+  jokes$!: Observable<any[]>;
+  loading = false;
+  constructor(private jokeApiService: JokeApiService, private http: HttpClient) {}
+  ngOnInit() {
+    this.getNewJokes();
+  }
+  getNewJokes() {
+    this.loading = true;
+    this.jokes$ = forkJoin([
+      this.getUniqueJoke(),
+      this.getUniqueJoke(),
+      this.getUniqueJoke()
+    ]).pipe(
+      finalize(() => (this.loading = false))
+    );
+  }
 
-    async ngOnInit()
-    {
-    //   this.joke1 = await this.getNewJoke1();
-    //   this.joke2 = await this.getNewJoke2();
-    //   this.joke3 = await this.getNewJoke3();
+  private getUniqueJoke(): Promise<any> {
+    const url = `http://localhost:8081/Joke?_cacheBust=${Date.now() + Math.random()}`;
+    return lastValueFrom(this.http.get<any>(url));
+  }
+  onHeartToggle1(event: any) {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      console.log('You liked the first joke!');
+    } else {
+      console.log('You unliked the first joke!');
     }
-    async getNewJokes() {
-       this.getNewJoke1();
-       this.getNewJoke2();
-       this.getNewJoke3();
-    //   console.log("THE RANDOM JOKE: ", this.joke1, this.joke2, this.joke3);
+  }
+  onHeartToggle2(event: any) {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      console.log('You liked the second joke!');
+    } else {
+      console.log('You unliked the second joke!');
     }
-    async getNewJoke1() {
-      this.joke1 =  await this.jokeApiService.getJoke();
-      this.joke1 = this.joke1
+  }
+  onHeartToggle3(event: any) {
+    const isChecked = event.target.checked;
+    if (isChecked) {
+      console.log('You liked the third joke!');
+    } else {
+      console.log('You unliked the third joke!');
     }
-    async getNewJoke2() {
-        this.joke2 = await this.jokeApiService.getJoke();
-        this.joke2 = this.joke2
-    }
-    async getNewJoke3() {
-      this.joke3 = await this.jokeApiService.getJoke();
-      this.joke3 = this.joke3
-    }    
- }
+  }
+}

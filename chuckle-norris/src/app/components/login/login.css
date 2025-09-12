@@ -16,6 +16,7 @@ h2 { text-align: center; }
 p { font-size: .85rem; font-weight: 200; line-height: 1.25rem; letter-spacing: 0.5px; margin: 20px 0 30px; }
 span { font-size: .75rem; }
 a { color: #333333; font-size: .85rem; text-decoration: none; margin: 15px 0; }
+.submit,
 button {
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -37,9 +38,13 @@ button {
     -o-transition: all .25s ease-in;
     cursor: pointer;
 }
+    .submit:hover,
     button:hover { background-color: #37DFB8; }
-    button:active { transform: scale(.95); -webkit-transform: scale(.95rem); -moz-transform: scale(.95); -ms-transform: scale(.95); -o-transform: scale(.95); }
+    button:active,
+    .submit:active { transform: scale(.95); -webkit-transform: scale(.95rem); -moz-transform: scale(.95); -ms-transform: scale(.95); -o-transform: scale(.95); }
+    .submit:focus,
     button:focus { outline: none; }
+    .submit.ghost,
     button.ghost { background-color: transparent; border-color: #FFFFFF; }
 form { background-color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 0 50px; height: 100%; text-align: center; }
 input { background-color: #EEEEEE; border: none; padding: 12px 15px; margin: 8px 0; width: 100%; }

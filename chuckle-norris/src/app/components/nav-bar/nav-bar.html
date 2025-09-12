@@ -15,9 +15,12 @@
           <li class="nav-item"><a class="nav-link text-dark" href="/home">Home</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="/createJoke">Create a Joke</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="/rankJoke">Rank a Joke</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="/favorites">Favorites</a></li>
-          <li class="nav-item mx-3">
+          <li class="nav-item"><a class="nav-link text-dark" href="/favorites" *ngIf="isLoggedIn">Favorites</a></li>
+          <li class="nav-item mx-3" *ngIf="!isLoggedIn">
             <a class="btn btn-outline-primary" href="/login">Login</a>
+          </li>
+          <li class="nav-item mx-3" *ngIf="isLoggedIn">
+            <a class="btn btn-outline-primary" href="/home" (click)="logout()">Logout</a>
           </li>
         </ul>
       </div>

@@ -6,7 +6,7 @@ import com.ChuckleApiServer.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping
 public class UserApiController {
