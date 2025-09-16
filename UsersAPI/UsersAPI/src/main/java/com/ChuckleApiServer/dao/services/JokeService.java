@@ -17,20 +17,4 @@ public class JokeService implements IJoke {
 
     }
 
- /*   private final RestClient randomJoke;
-
-
-    public JokeService() {
-        this.randomJoke = RestClient.builder()
-                .baseUrl("https://api.chucknorris.io")
-                .build();
-    }
-
-    public Joke getJoke() {
-        return randomJoke.get()
-                .uri("/jokes/random")
-                .retrieve()
-                .body(Joke.class);
-    }*/
-
 }

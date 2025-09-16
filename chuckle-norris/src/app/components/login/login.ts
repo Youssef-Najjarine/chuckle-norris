@@ -17,11 +17,11 @@ export class Login {
   newUser = {
     firstName: '',
     lastName: '',
-    email: '',
+    userName: '',
     password: ''
   };
   userLogin = {
-    email: '',
+    userName: '',
     password: ''
   };
   constructor(
@@ -36,7 +36,7 @@ export class Login {
 
   login() {
     this.userLogin = {
-      email: '',
+      userName: '',
       password: ''
     };
     this.authService.setLoggedIn(true);
@@ -44,15 +44,15 @@ export class Login {
   }
 
   createAccount() {
-    this.authService.setLoggedIn(true);
+   
     this.router.navigateByUrl('/home');
     this.userApiService.addUser(this.newUser).then((response) => {
       console.log('User created successfully:', response);
-      // this.authService.setLoggedIn(true);
+      this.authService.setLoggedIn(true);
       this.newUser = {
         firstName: '',
         lastName: '',
-        email: '',
+        userName: '',
         password: ''
       };
       this.isRightPanelActive = false;

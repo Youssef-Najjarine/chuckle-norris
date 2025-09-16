@@ -4,7 +4,7 @@
                 <h1>Create Account</h1>
                 <input type="text" placeholder="First Name" [(ngModel)]="newUser.firstName" name="firstName">
                 <input type="text" placeholder="Last Name" [(ngModel)]="newUser.lastName" name="lastName">
-                <input type="email" placeholder="Email" [(ngModel)]="newUser.email" name="email">
+                <input type="email" placeholder="User Name" [(ngModel)]="newUser.userName" name="email">
                 <input type="password" placeholder="Password" [(ngModel)]="newUser.password" name="password">
                 <input type="submit" value="Sign Up" class="submit"/> 
             </form>
@@ -13,7 +13,7 @@
         <div class="form-container login-container">
             <form (ngSubmit)="login()">
                 <h1>Login</h1>
-                <input type="text" placeholder="Email" [(ngModel)]="userLogin.email" name="email">
+                <input type="text" placeholder="User Name" [(ngModel)]="userLogin.userName" name="email">
                 <input type="password" placeholder="Password" [(ngModel)]="userLogin.password" name="password">
                 <a href="#">Forgot your password?</a>
                 <input type="submit" value="Login" class="submit"/> 
