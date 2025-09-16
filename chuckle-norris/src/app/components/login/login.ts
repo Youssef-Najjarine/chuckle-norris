@@ -35,20 +35,27 @@ export class Login {
   }
 
   login() {
-    this.userLogin = {
-      userName: '',
-      password: ''
-    };
-    this.authService.setLoggedIn(true);
+   this.authService.setLoggedIn(true);  
     this.router.navigateByUrl('/home');
+    // this.userApiService.getUserInfo(this.userLogin.).then((response) => {
+    // this.authService.setLoggedIn(true);  
+    // this.router.navigateByUrl('/home');
+    //  this.userLogin = {
+    //   userName: '',
+    //   password: ''
+    // };
+    //}) 
+    
+    
   }
 
   createAccount() {
    
-    this.router.navigateByUrl('/home');
+    
     this.userApiService.addUser(this.newUser).then((response) => {
       console.log('User created successfully:', response);
       this.authService.setLoggedIn(true);
+      this.router.navigateByUrl('/home');
       this.newUser = {
         firstName: '',
         lastName: '',
