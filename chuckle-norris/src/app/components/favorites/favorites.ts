@@ -1,28 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FavoriteApiService } from '../../services/favorite-api-service';
+import { FavoriteLayout } from '../../interfaces/favorite-layout';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-favorites',
   imports: [CommonModule],
   templateUrl: './favorites.html',
-  styleUrl: './favorites.css'
+  styleUrls: ['./favorites.css'],
 })
-export class Favorites {
-  favorites: any[] = [
-    {quote: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).", date: "1/1/25", rank: 1},
-    {quote: "Time N Affection", date: "07/06/1985", rank: 3},
-    {quote: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).", date: "09/25/2012" , rank: 2},
-    {quote: "Bohemian Rhapsody", date: "08/16/2013", rank: 1},
-    {quote: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).", date: "07/06/1985", rank: 3},
-    {quote: "Toosie Slide", date: "09/25/2012", rank: 2},
-    {quote: "Danza Kuduro", date: "08/16/2013", rank: 1},
-    {quote: "Candy Shop", date: "07/06/1985", rank: 3}
-  ];
+export class Favorites implements OnInit {
+  favorites$!: Observable<FavoriteLayout[]>;
 
-        sortFavoritesAsc(): void {
-        this.favorites.sort((a, b) => a.rank - b.rank);
-      }
+  constructor(private favoriteApiService: FavoriteApiService) {}
 
-      sortFavoritesDesc(): void {
-        this.favorites.sort((a, b) => b.rank - a.rank);
-      }
+  ngOnInit() {
+    this.favorites$ = this.favoriteApiService.getAllFavorites();
+  }
+
+  sortFavoritesAsc(): void {
+    this.favorites$ = this.favoriteApiService.getAllFavorites().pipe(
+      map((favorites) =>
+        [...favorites].sort((a, b) => (a.rank || 0) - (b.rank || 0))
+      )
+    );
+  }
+
+  sortFavoritesDesc(): void {
+    this.favorites$ = this.favoriteApiService.getAllFavorites().pipe(
+      map((favorites) =>
+        [...favorites].sort((a, b) => (b.rank || 0) - (a.rank || 0))
+      )
+    );
+  }
+
+  deleteFavorite(favoriteId: number): void {
+    this.favoriteApiService.deleteFavorite(favoriteId);
+  }
 }

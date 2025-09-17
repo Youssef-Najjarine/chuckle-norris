@@ -1,90 +1,47 @@
- <router-outlet></router-outlet>
- <ng-container *ngIf="jokes$ | async as jokes">
- <section id="rankJoke">
+<router-outlet></router-outlet>
+<ng-container *ngIf="jokes$ | async as jokes">
+  <section id="rankJoke">
     <div class="text-center mb-4">
-        <h2>Rank the Jokes</h2>
+      <h2>Rank the Jokes</h2>
     </div>
     <div class="joke-row">
-      <div class="joke-col">
+      <div class="joke-col" *ngFor="let joke of jokes; let i = index">
         <div class="card shadow-sm text-center h-100">
           <div class="card-header">
-            <h4 class="fw-normal">Joke 1</h4>
+            <h4 class="fw-normal">Joke {{ i + 1 }}</h4>
           </div>
           <div class="joke-card-body">
-            <h1 class="joke-header">{{ jokes[0].value }}</h1>
+            <h1 class="joke-header">{{ joke.value }}</h1>
             <div class="heart-rank-row">
               <div>
-                <input type="checkbox" id="heart-toggle-1" (change)="onHeartToggle1($event)">
-                <label for="heart-toggle-1">
+                <input
+                  type="checkbox"
+                  [id]="'heart-toggle-' + i"
+                  [checked]="isFavorite(joke.id)"
+                  (change)="onHeartToggle($event, joke, i)"
+                />
+                <label [for]="'heart-toggle-' + i">
                   <svg class="heart" viewBox="0 0 24 24">
-                    <path d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"/>
+                    <path
+                      d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"
+                    />
                   </svg>
                 </label>
               </div>
-                <div class="rank-div">
-                    <select class="form-select" id="select-centered">
-                    <option selected>Choose Rank</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="joke-col">
-        <div class="card shadow-sm text-center h-100">
-          <div class="card-header">
-            <h4 class="fw-normal">Joke 2</h4>
-          </div>
-          <div class="joke-card-body">
-            <h1 class="joke-header">{{ jokes[1].value }}</h1>
-            <div class="heart-rank-row">
-              <div>
-                <input type="checkbox" id="heart-toggle-2" (change)="onHeartToggle2($event)">
-                <label for="heart-toggle-2">
-                  <svg class="heart" viewBox="0 0 24 24">
-                    <path d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"/>
-                  </svg>
-                </label>
+              <div class="rank-div">
+                <select
+                  class="form-select"
+                  [id]="'select-' + i"
+                  [(ngModel)]="ranks[i]"
+                  (ngModelChange)="onRankChange(i)"
+                  [disabled]="ranks[i] !== undefined"
+                >
+                  <option [ngValue]="undefined">Choose Rank</option>
+                  <option value="1" [disabled]="isRankTaken(1, i)">One</option>
+                  <option value="2" [disabled]="isRankTaken(2, i)">Two</option>
+                  <option value="3" [disabled]="isRankTaken(3, i)">Three</option>
+                </select>
               </div>
-                <div class="rank-div">
-                    <select class="form-select" id="select-centered">
-                    <option selected>Choose Rank</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="joke-col">
-        <div class="card shadow-sm text-center h-100">
-          <div class="card-header">
-            <h4 class="fw-normal">Joke 3</h4>
-          </div>
-          <div class="joke-card-body">
-            <h1 class="joke-header">{{ jokes[2].value }}</h1>
-            <div class="heart-rank-row">
-              <div>
-                <input type="checkbox" id="heart-toggle-3" (change)="onHeartToggle3($event)">
-                <label for="heart-toggle-3">
-                  <svg class="heart" viewBox="0 0 24 24">
-                    <path d="M12 21s-6-4.35-9-8.7C-1.5 7.5 4.5 1.5 12 7.5c7.5-6 13.5 0 9 4.8-3 4.35-9 8.7-9 8.7z"/>
-                  </svg>
-                </label>
-              </div>
-                <div class="rank-div">
-                    <select class="form-select" id="select-centered">
-                    <option selected>Choose Rank</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    </select>
-                </div>
             </div>
           </div>
         </div>
@@ -96,4 +53,4 @@
       </div>
     </div>
   </section>
- </ng-container>
+</ng-container>
