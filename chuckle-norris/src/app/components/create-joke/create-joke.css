@@ -73,3 +73,15 @@ textarea::placeholder {
   font-family:'PatrickHand';
   color: #888;
 }
+
+@media (max-width: 523px) {
+.container { 
+    width:370px; 
+    margin:30px auto; 
+    display:block; 
+    background:#FFF;
+    padding:30px 50px 30px  50px;
+    border:solid 1px #ddd;
+    text-align:center;
+}
+}

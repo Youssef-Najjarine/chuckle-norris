@@ -37,6 +37,10 @@ export class Login {
   login() {
    this.authService.setLoggedIn(true);  
     this.router.navigateByUrl('/home');
+     this.userLogin = {
+      userName: '',
+      password: ''
+    };    
     // this.userApiService.getUserInfo(this.userLogin.).then((response) => {
     // this.authService.setLoggedIn(true);  
     // this.router.navigateByUrl('/home');
