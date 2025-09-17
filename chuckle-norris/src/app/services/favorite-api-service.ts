@@ -43,6 +43,7 @@ export class FavoriteApiService {
   }
 
   getAllFavorites(): Observable<FavoriteLayout[]> {
+    // NEED TO REPLACE WITH ACTUAL SERVER CALL
     /*
     async getAllFavorites(): Promise<any[]> {
       const result: any[] = await lastValueFrom(this.theServer.get<any[]>(this.theServerURL));
@@ -53,6 +54,7 @@ export class FavoriteApiService {
   }
 
   getFavoriteByRank(rank: number): Observable<FavoriteLayout | undefined> {
+    // NEED TO REPLACE WITH ACTUAL SERVER CALL
     /*
     async getFavoriteByRank(rank: number): Promise<any> {
       const result: any = await lastValueFrom(this.theServer.get<any>(`${this.theServerURL}/rank/${rank}`));
@@ -67,6 +69,7 @@ export class FavoriteApiService {
   }
 
   addFavorite(newFavorite: FavoriteLayout): void {
+    // NEED TO REPLACE WITH ACTUAL SERVER CALL
     /*
     async addFavorite(newFavorite: any): Promise<any> {
       const headers = new HttpHeaders({
@@ -82,6 +85,7 @@ export class FavoriteApiService {
   }
 
   updateFavorite(updateFavorite: FavoriteLayout): void {
+    // NEED TO REPLACE WITH ACTUAL SERVER CALL
     /*
     async updateFavorite(updateFavorite: any): Promise<any> {
       const headers = new HttpHeaders({
@@ -98,6 +102,7 @@ export class FavoriteApiService {
   }
 
   deleteFavorite(id: number): void {
+    // NEED TO REPLACE WITH ACTUAL SERVER CALL
     /*
     async deleteFavorite(id: number): Promise<any> {
       return lastValueFrom(this.theServer.delete(`${this.theServerURL}/${id}`));
